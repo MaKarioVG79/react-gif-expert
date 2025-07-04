@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ProtoTypes from "prop-types";
 
 export const AddCategory = ({onNewCategory}) => {
 
@@ -17,7 +18,7 @@ export const AddCategory = ({onNewCategory}) => {
         setInputValue("");
     }
     return (
-      <form onSubmit={onSubmit}> 
+      <form onSubmit={onSubmit} aria-label="form"> 
     <input
         type="text"
         placeholder="Buscar gif"
@@ -26,4 +27,8 @@ export const AddCategory = ({onNewCategory}) => {
     />
       </form> 
   )
+}
+
+AddCategory.ProtoTypes = {
+  onNewCategory : ProtoTypes.func.isRequired,
 }
